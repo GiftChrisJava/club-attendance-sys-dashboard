@@ -1,0 +1,120 @@
+.inArticle {
+  display: block;
+  margin: 20px 70px;
+}
+
+.title {
+  margin-top: -1em;
+  text-align: center;
+}
+
+.content {
+  background: #24d0d6;
+  width: 130%;
+  height: 11rem;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+.content::-webkit-scrollbar {
+  width: 6px; /* Width of the scroll bar */
+  background-color: #e9ebec;
+  border-radius: 5px;
+}
+.text {
+  color: aliceblue;
+  padding: 0px 3px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.text:hover {
+  color: #072a40;
+}
+
+.article {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 100px;
+}
+
+.form {
+  border: 2px solid #24d0d6;
+  padding: 20px;
+  border-radius: 12px;
+  display: block;
+  width: 100%;
+}
+
+.input {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn {
+  display: block;
+  padding: 8px;
+  background-color: #24d0d6;
+  color: #072a40;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 70px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  color: #fdfdfdd7;
+}
+
+.h4 {
+  display: block;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: #18b7be;
+}
+
+.hh4 {
+  color: #18b7be;
+}
+
+.deleteUpdate {
+  border: 2px solid #24d0d6;
+  padding: 20px;
+  border-radius: 12px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.deleteUpdate .btn {
+  display: block;
+  padding: 8px;
+  margin-top: 10px;
+  background-color: #24d0d6;
+  color: #072a40;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 108%;
+  font-weight: bold;
+}
+
+.deleteUpdate .btnD {
+  display: block;
+  padding: 8px;
+  margin-top: 20px;
+  background-color: #24d0d6;
+  color: red;
+  border: none;
+  font-weight: bolder;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 108%;
+  font-weight: bold;
+}

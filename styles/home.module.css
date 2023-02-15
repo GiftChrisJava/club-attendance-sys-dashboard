@@ -1,0 +1,29 @@
+.title {
+  color: #333;
+  padding-bottom: 20px;
+  text-align: center;
+  color: #f9f7f0;
+}
+
+.text {
+  color: #777;
+  color: #f9f7f0;
+}
+
+.home {
+  margin-top: -1em;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn {
+  display: block;
+  width: 150px;
+  padding: 8px 0;
+  background: #18b7be;
+  border-radius: 4px;
+  color: #072a40;
+  font-weight: bold;
+  text-align: center;
+  margin: 15px auto;
+}
