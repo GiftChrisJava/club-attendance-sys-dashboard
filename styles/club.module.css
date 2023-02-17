@@ -89,7 +89,7 @@
   display: block;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 50%;
 }
 
 .deleteUpdate .btn {
@@ -117,4 +117,32 @@
   cursor: pointer;
   width: 108%;
   font-weight: bold;
+}
+
+.table {
+  display: block;
+  margin: 4rem 4rem;
+}
+
+.h1 {
+  text-align: center;
+  color: #24d0d6;
+}
+
+.span {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.span .input {
+  width: 35%;
+}
+
+.span .btn {
+  height: 35px;
+}
+.update_form {
+  width: 50%;
+  margin: 2rem auto;
 }

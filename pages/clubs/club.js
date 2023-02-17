@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
 import styles from "../../styles/club.module.css";
+import Table from "./table";
 import {
   getClubs,
   createClub,
   getClubById,
-  deleteClub,
   updateClub,
+  deleteClub,
 } from "../api/clubs";
 
 const Club = () => {
   const [clubs, setClubs] = useState([]); // array of all the clubs
   const [club, setClub] = useState({}); // get a club
   const [clubName, setClubName] = useState();
+  const [updateId, setUpdateId] = useState();
   const [id, setId] = useState();
+  const [updatedName, setUpdatedName] = useState();
+  const [trueVal, setTrueVal] = useState(false);
 
   // get the clubs
   async function getClubsData() {
@@ -28,6 +32,8 @@ const Club = () => {
   async function getClubDataById() {
     try {
       const club = await getClubById(id);
+      setClub(club.club);
+      setTrueVal(true);
       setId("");
     } catch (error) {
       console.error(error);
@@ -37,6 +43,18 @@ const Club = () => {
   useEffect(() => {
     getClubsData();
   }, []);
+
+  // update a club
+  const handleSubmitForUpdate = async (e) => {
+    e.preventDefault();
+
+    const data = { name: updatedName, id: updateId };
+    const upDatedClub = await updateClub(data);
+
+    setUpdatedName("");
+    setUpdateId("");
+    getClubsData();
+  };
 
   // create a club
   const handleSubmit = async (e) => {
@@ -53,8 +71,6 @@ const Club = () => {
     e.preventDefault();
 
     const newClub = await deleteClub(id);
-    console.log(newClub);
-
     getClubsData();
     setId("");
   };
@@ -126,6 +142,39 @@ const Club = () => {
             </form>
           </div>
         </article>
+
+        <div className={styles.table}>
+          <h1 className={styles.h1}>{club.name}</h1>
+          {trueVal ? <Table data={club} /> : <></>}
+        </div>
+
+        <div className={styles.update_form}>
+          <h4 className={styles.h4}>Update Club</h4>
+          <form onSubmit={handleSubmitForUpdate} className={styles.form}>
+            <label>
+              <input
+                className={styles.input}
+                type="text"
+                placeholder="Type club name ..."
+                value={updatedName}
+                onChange={(e) => setUpdatedName(e.target.value)}
+              />
+            </label>
+
+            <div className={styles.span}>
+              <button type="submit" className={styles.btn}>
+                Update
+              </button>
+              <input
+                className={styles.input}
+                type="number"
+                placeholder="Type Id"
+                value={updateId}
+                onChange={(e) => setUpdateId(e.target.value)}
+              />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -15,6 +15,18 @@ export async function createClub(club) {
   }
 }
 
+// update club
+export async function updateClub(club) {
+  const data = { name: club.name };
+  const response = await api.put(`/club/${club.id}`, data);
+
+  if (response.status == 200) {
+    return response.data;
+  } else {
+    throw new Error(response.problem);
+  }
+}
+
 // get clubs
 export async function getClubs() {
   const response = await api.get("/clubs");
@@ -32,17 +44,6 @@ export async function getClubs() {
 // get by Id
 export async function getClubById(id) {
   const response = await api.get(`/club/${id}`);
-
-  if (response.status == 200) {
-    return response.data;
-  } else {
-    throw new Error(response.problem);
-  }
-}
-
-// update club
-export async function updateClub(club) {
-  const response = await api.put(`/club/${club.id}`, club);
 
   if (response.status == 200) {
     return response.data;

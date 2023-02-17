@@ -27,7 +27,7 @@ export default function Home() {
         <div>
           <h1 className={styles.title}>SOME OF THE ROLES</h1>
 
-          <Link href="/about">
+          <Link href="/clubs/club">
             <p className={styles.btn}>Add A Club</p>
           </Link>
           <p className={styles.btn}>Add Members</p>
